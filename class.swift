@@ -8,9 +8,8 @@
  * let으로 선언한bc 객체의 프로퍼티중 var로 선언한 프로퍼티는 수정이 가능하다. (구조체는 안됨)
  */
 
-/*
- * 열거형 클래스: kotlin처럼 함수도 가능함.
- * enum WeekDay {
+//열거형 클래스: kotlin처럼 함수도 가능함.
+enum WeekDay {
     case mon
     case tue
     case wed
@@ -25,10 +24,9 @@
         }
     }
 
- }
- * enum WeekDay: Int {
+}
+
+enum WeekDay: Int {
     case mon=0,
-    case tue,wed,thu,fri,sat,sun  **나머지 값들은 자동으로 채워짐
- }
- *
- */
+    case tue,wed,thu,fri,sat,sun  //나머지 값들은 자동으로 채워짐
+}
