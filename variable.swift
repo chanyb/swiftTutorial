@@ -3,6 +3,7 @@
  * 2) 타입
  * 3) 옵셔널
  * 4) 프로퍼티
+ * 5) 타입캐스팅
  */
 
 
@@ -64,22 +65,22 @@ if let value: Int = optionalValue {
 
 /*
  * 프로퍼티
- * 1) 저장 프로퍼티
- * 2) 연산 프로퍼티
- * 3) 타입 프로퍼티
- * 4) 
+ * 4-1) 저장 프로퍼티
+ * 4-2) 연산 프로퍼티
+ * 4-3) 타입 프로퍼티
+ * 4-4) 프로퍼티 감시자
  */
 
  
  // example
  struct Student {
-    // 1) 인스턴스 저장 프로퍼티
+    // 4-1) 인스턴스 저장 프로퍼티
     var name: String = "" 
     var `class`: String = "Swift"
     var koreanAge: Int = 0
 
 
-    // 2) 인스턴스 연산 프로퍼티: 값을 연산하기 위한 프로퍼티가 있다.
+    // 4-2) 인스턴스 연산 프로퍼티: 값을 연산하기 위한 프로퍼티가 있다.
     var westernAge: Int {
         get {
             return koreanAge -1
@@ -92,14 +93,14 @@ if let value: Int = optionalValue {
     // 연산프로퍼티는, 구조체, 클래스에서 뿐만아니라 지역/전역, 함수 등의 곳에서도 사용 가능하다.
 
 
-    // 3) 타입 프로퍼티
+    // 4-3) 타입 프로퍼티
     static var typeProperty: String = "StudentClass" // Student.typeProperty로 호출이 가능하기 때문에 타입의 프로퍼티라 하여 타입프로퍼티라고 불리는 것 같다.
 
  }
 
 
- // 4) 프로퍼티 감시자
- struct Wallet {
+// 4-4) 프로퍼티 감시자
+struct Wallet {
     var money : Int = 1100 {
         willSet(newMoney) {
             println("돈이 \(money)에서 \(newMoney)가 될 것입니다.")
@@ -109,4 +110,16 @@ if let value: Int = optionalValue {
             println("돈이 \(oldMoney)에서 \(money)가 되었습니다.")
         }
     }
- }
+}
+
+
+// 5) 타입캐스팅 (as?, as!)
+var a: Int = 10;
+var b: Int?
+var optionalcasted: Int?
+var castedInt: Int
+optionalcasted = a as? Int // as?는 옵셔널로 반환됨. 따라서 b as? Int는 nil이 반환됨
+castedInt = a as! Int // as!는Int로만 반환됨 b as! Int는 컴파일에러 발생 가능.
+
+
+
