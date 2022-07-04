@@ -22,3 +22,32 @@
  * var someFunction: (String,String) -> void = greeting(to:from:)
  */
 
+
+/*
+ * 1) assert
+ * 2) guard
+ */
+
+// 1) assert : 디버깅모드에서만 동작하며, 디버깅 중 조건의 검증을 위해 주로 쓴다.
+var a:Int = 0
+assert(a==0, "a != 0")
+
+a = 1
+assert(a==0, "a != 0") // 이 지점에서 검증이 실패하여 동작이 중지됨.
+
+
+// 2) guard: 빠른 종료를 위한 문법
+func functionWithGuard(age: Int?) {
+    guard let unwrappedAge = age,
+        unwrappedAge < 130,
+        unwrappedAge >= 0 else {
+            println("나이 입력이 잘못되었습니다.")
+            return
+        }
+
+    guard unwrappedAge < 100 else {
+        return
+    }
+
+    println("당신의 나이는 \(unwrappedAge)입니다.")
+}
