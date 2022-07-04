@@ -5,6 +5,7 @@
  * 4) initializer
  * 5) 실패가능한 initializer
  * 6) deinitializer
+ * 7) 옵셔널체이닝 & nil 병합연산자
  */
 
 // 2) 클래스
@@ -84,17 +85,25 @@ class PersonC {
     var name: String
     var age: Int
     var money: Int?
-    var child: PersonC
+    var child: PersonC?
     
     init(name: String, child: PersonC) {
         self.name = name
         self.child: PersonC
     }
 
+    init(name: String) {
+        self.name = name
+    }
+
     deinit {
         if let heritage = money? {
             println("\(name)가 \(child.name)에게 \(heritage)를 넘겨줍니다.")
-            child.money? = self.money?
+            child.money? = heritage
         }
     }
 }
+
+// 7) 옵셔널체이닝 & nil 병합연산자(??)
+var bc: PersonC("bc")
+var tmp = bc.child?.money ?? = 300 //child가 nil이면, tmp에300이할당되고, 아니면 child가 가진 money가 할당된다.
