@@ -1,5 +1,7 @@
 /*
  * 1) 프로토콜
+ * 2) 프로토콜의 다중상속
+ * 3) 익스텐션
  */
 
 
@@ -49,3 +51,23 @@ struct Person: Talkable {
 protocol TalkAndSpeakable: Talkable {
     func speak()
 }
+
+
+// 3) extension: 기존에 존재하던 타입에 추가적으로 구현이가능 (기능, protocol 등등..)
+extension Int {
+    var isEven: Bool { // 연산 프로퍼티 추가
+        return self % 2 == 0
+    }
+    var isOdd: Bool { // 연산 프로퍼티 추가
+        return self % 2 == 1
+    }
+
+    func multiply(by n: Int) -> Int { // 메서드 추가
+        return self * n
+    }
+}
+
+var extentionTest = 1
+println(extentionTest.isEven) // false
+println(extensionTest.multiply(by: 3)) // 1*3
+
