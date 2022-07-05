@@ -1,4 +1,7 @@
-[[iOS 앱의 생명주기에 관하여..]]
+
+
+iOS 앱의 생명주기에 관하여..
+----------------------------
   1. UIKit이라는 프레임워크가 main함수를관리한다.
   2. UIkit은 main함수를 다루는 과정에서 UIApplicationMain함수를 실행한다.
   3. UIApplicationMain함수를 통해 UIApplication객체가 실행된다.
@@ -13,7 +16,8 @@
     3-3-5. UIApplication 객체는 가장 먼저 어떤 것을 실행할 지 결정한다.
 
 
-[[App State]]
+App State
+---------
  : 앱의 상태는 총 5가지가 있음
   1. Not Running : 앱이 실행되지 않았거나 완전히 종료되어 동작하지 않는 상태
   2. Inactive(Foreground) : 앱이 실행되면서 foreground에 진입하지만, 어떠한 이벤트도 받지 않은 상태 (앱의 전환상태에서잠깐 머무는 단계)
@@ -22,7 +26,8 @@
   5. Suspended : Background에 있는 앱이 아무 코드도 실행하지 않는 상태. 특별한 작업을 하고 있지 않은 상태. 배터리사용x, OS가 memory에서 종료 가능
 
 
-[[AppDelegate]]
+AppDelegate
+--------------
  - (iOS13 이전) AppDelegate가 app의 launch, foregrouding, backgrounding 등 Life-Cycle을 관리하는 책임을 가졌다.
  - (현재) 
    1. application의 entry point 역할과, application level의 life-cycle을 관리하는 역할을 한다. AppDelegate.swift에는 중요한 세개의 메서드가 있다.
@@ -41,7 +46,8 @@
      3) terminate detecting
 
 
-[[SceneDelegate]]
+SceneDelegate
+-------------
  - 화면에 무엇(Scene/window)을 보여줄 지 관리하는 역할
  - Apple이 제공하는 메서드
    1) scene(_: willConnectTo: options: )
