@@ -4,16 +4,18 @@ iOS 앱의 생명주기에 관하여..
 ----------------------------
   1. UIKit이라는 프레임워크가 main함수를관리한다.
   2. UIkit은 main함수를 다루는 과정에서 UIApplicationMain함수를 실행한다.
-  3. UIApplicationMain함수를 통해 UIApplication객체가 실행된다.
-    [[UIApplication]] 객체를 통해 개발자가 앱의 실행에 관여할 수 있다.
-    3-1. @UIApplicationMain 또는 @Main annotation이 있는 클래스를 찾아 AppDelegate 객체를 생성한다.
-    3-2. Touch 등 사용자의 action을 받는 "Main Event(Run) Loop"을 실행한다.
-    3-3. "Main Run Loop"은 메인 스레드에서 실행된다.
-    3-3-1. 유저가 이벤트를 일으키면, 시스템을 통해 event가 생성된다.
-    3-3-2. UIKit 프레임워크를 통해 생성된 port로 해당 이벤트가 앱으로 전달된다.
-    3-3-3. 이벤트는 앱 내부적으로 Queue의 형태로 Event Queue에 쌓인다.
-    3-3-4. Event Queue의 이벤트들은 Main Run Loop에 하나씩 매핑된다.
-    3-3-5. UIApplication 객체는 가장 먼저 어떤 것을 실행할 지 결정한다.
+  3. UIApplicationMain함수를 통해 UIApplication객체가 실행된다.:
+
+    UIApplication객체를 통해 개발자가 앱의 실행에 관여할 수 있다.
+  
+  > 3-1. @UIApplicationMain 또는 @Main annotation이 있는 클래스를 찾아 AppDelegate 객체를 생성한다.
+  > 3-2. Touch 등 사용자의 action을 받는 "Main Event(Run) Loop"을 실행한다.
+  > 3-3. "Main Run Loop"은 메인 스레드에서 실행된다.
+  > > 3-3-1. 유저가 이벤트를 일으키면, 시스템을 통해 event가 생성된다.
+  > > 3-3-2. UIKit 프레임워크를 통해 생성된 port로 해당 이벤트가 앱으로 전달된다.
+  > > 3-3-3. 이벤트는 앱 내부적으로 Queue의 형태로 Event Queue에 쌓인다.
+  > > 3-3-4. Event Queue의 이벤트들은 Main Run Loop에 하나씩 매핑된다.
+  > > 3-3-5. UIApplication 객체는 가장 먼저 어떤 것을 실행할 지 결정한다.
 
 
 App State
