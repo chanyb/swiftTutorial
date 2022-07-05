@@ -6,26 +6,26 @@ iOS 앱의 생명주기에 관하여..
   2. UIkit은 main함수를 다루는 과정에서 UIApplicationMain함수를 실행한다.
   3. UIApplicationMain함수를 통해 UIApplication객체가 실행된다.:
 
-    UIApplication객체를 통해 개발자가 앱의 실행에 관여할 수 있다.
+    `UIApplication`객체를 통해 개발자가 앱의 실행에 관여할 수 있다.
   
-  > 3-1. @UIApplicationMain 또는 @Main annotation이 있는 클래스를 찾아 AppDelegate 객체를 생성한다.
+  > 3-1. `@UIApplicationMain` 또는 `@Main` annotation이 있는 클래스를 찾아 AppDelegate 객체를 생성한다.
   > 3-2. Touch 등 사용자의 action을 받는 "Main Event(Run) Loop"을 실행한다.
   > 3-3. "Main Run Loop"은 메인 스레드에서 실행된다.
-  > > 3-3-1. 유저가 이벤트를 일으키면, 시스템을 통해 event가 생성된다.
-  > > 3-3-2. UIKit 프레임워크를 통해 생성된 port로 해당 이벤트가 앱으로 전달된다.
-  > > 3-3-3. 이벤트는 앱 내부적으로 Queue의 형태로 Event Queue에 쌓인다.
-  > > 3-3-4. Event Queue의 이벤트들은 Main Run Loop에 하나씩 매핑된다.
-  > > 3-3-5. UIApplication 객체는 가장 먼저 어떤 것을 실행할 지 결정한다.
+  >> 3-3-1. 유저가 이벤트를 일으키면, 시스템을 통해 event가 생성된다.
+  >> 3-3-2. UIKit 프레임워크를 통해 생성된 port로 해당 이벤트가 앱으로 전달된다.
+  >> 3-3-3. 이벤트는 앱 내부적으로 Queue의 형태로 Event Queue에 쌓인다.
+  >> 3-3-4. Event Queue의 이벤트들은 Main Run Loop에 하나씩 매핑된다.
+  >> 3-3-5. UIApplication 객체는 가장 먼저 어떤 것을 실행할 지 결정한다.
 
 
 App State
 ---------
  : 앱의 상태는 총 5가지가 있음
-  1. Not Running : 앱이 실행되지 않았거나 완전히 종료되어 동작하지 않는 상태
-  2. Inactive(Foreground) : 앱이 실행되면서 foreground에 진입하지만, 어떠한 이벤트도 받지 않은 상태 (앱의 전환상태에서잠깐 머무는 단계)
-  3. Active(Foreground) : 앱이 실행중이며, foreground에 있고, 이벤트를 받고 있는 상태
-  4. Background : 앱이 백그라운드에 있으며, 다른 앱으로의 전환 또는 홈 화면에 있는 상태. 일정시간 후 Suspended로 전환된다.
-  5. Suspended : Background에 있는 앱이 아무 코드도 실행하지 않는 상태. 특별한 작업을 하고 있지 않은 상태. 배터리사용x, OS가 memory에서 종료 가능
+  1. `Not Running` : 앱이 실행되지 않았거나 완전히 종료되어 동작하지 않는 상태
+  2. `Inactive(Foreground)` : 앱이 실행되면서 foreground에 진입하지만, 어떠한 이벤트도 받지 않은 상태 (앱의 전환상태에서잠깐 머무는 단계)
+  3. `Active(Foreground)` : 앱이 실행중이며, foreground에 있고, 이벤트를 받고 있는 상태
+  4. `Background` : 앱이 백그라운드에 있으며, 다른 앱으로의 전환 또는 홈 화면에 있는 상태. 일정시간 후 Suspended로 전환된다.
+  5. `Suspended` : Background에 있는 앱이 아무 코드도 실행하지 않는 상태. 특별한 작업을 하고 있지 않은 상태. 배터리사용x, OS가 memory에서 종료 가능
 
 
 AppDelegate
