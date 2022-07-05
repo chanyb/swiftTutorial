@@ -76,4 +76,4 @@ SceneDelegate
 
 생명주기 사진
 -------------
-![Alt text]("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2hrR1%2Fbtq9lmHHS61%2F8CdVriJjEukuzJ0YLmJwUk%2Fimg.png")
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc2hrR1%2Fbtq9lmHHS61%2F8CdVriJjEukuzJ0YLmJwUk%2Fimg.png" width="100%" />
